@@ -26,7 +26,7 @@ NORMAL_INTERVAL = 100
 
 
 # 音量
-SOUND_VOLUME = 75
+SOUND_VOLUME = 100
 
 # 黒色の反射率（0～35%）
 BLACK_REFLECTION_MIN = 0.0
@@ -588,8 +588,10 @@ async def never_gonna_give_you_up():
     await play_sound(la_4_s, n16)
 
     # Give You Up
-    await play_sound(fa_5, n8 + n16)
-    await play_sound(fa_5, n8 + n16)
+    await play_sound(fa_5, n16)
+    await runloop.sleep_ms(n8)
+    await play_sound(fa_5, n16)
+    await runloop.sleep_ms(n8)
     await play_sound(re_5_s, n4 + n8)
     # Never Gonna
     await play_sound(so_4_s, n16)
@@ -598,8 +600,10 @@ async def never_gonna_give_you_up():
     await play_sound(la_4_s, n16)
 
     # Let you down
-    await play_sound(re_5_s, n8 + n16)
-    await play_sound(re_5_s, n8 + n16)
+    await play_sound(re_5_s, n16)
+    await runloop.sleep_ms(n8)
+    await play_sound(re_5_s, n16)
+    await runloop.sleep_ms(n8)
     await play_sound(do_5_s, n8 + n16)
     await play_sound(do_5, n16)
     await play_sound(la_4_s, n8)
@@ -625,8 +629,10 @@ async def never_gonna_give_you_up():
     await play_sound(la_4_s, n16)
 
     # Make you cry
-    await play_sound(fa_5, n8 + n16)
-    await play_sound(fa_5, n8 + n16)
+    await play_sound(fa_5, n16)
+    await runloop.sleep_ms(n8)
+    await play_sound(fa_5, n16)
+    await runloop.sleep_ms(n8)
     await play_sound(re_5_s, n4 + n8)
     # Never Gonna
     await play_sound(so_4_s, n16)
@@ -655,6 +661,60 @@ async def never_gonna_give_you_up():
     await play_sound(so_4_s, n8)
     await play_sound(re_5_s, n4)
     await play_sound(do_5_s, n4 * 3)
+
+
+async def u_n():
+    n4, n8, n16 = bpm_to_note_durations_ms(bpm=160)
+
+    await play_sound(la_3_s, n4)
+    await play_sound(fa_4, n4)
+    await play_sound(do_4, n4)
+    await play_sound(fa_4, n4)
+
+    await play_sound(do_4_s, n4)
+    await play_sound(re_4_s, n8)
+    await play_sound(fa_4, n8)
+    await play_sound(re_4_s, n4)
+    await play_sound(so_4, n4)
+
+    await play_sound(la_4_s, n8)
+    await play_sound(fa_4, n8)
+    await play_sound(do_5, n8)
+    await play_sound(do_5_s, n8)
+    await play_sound(do_5, n8)
+    await play_sound(do_5_s, n16)
+    await play_sound(do_5, n16)
+    await play_sound(la_4_s, n8)
+    await play_sound(so_4_s, n8)
+
+    await play_sound(fa_4, n8)
+    await play_sound(so_4_s, n8)
+    await play_sound(re_4_s, n8)
+    await play_sound(fa_4, n8)
+    await play_sound(do_4_s, n4 * 2)
+
+    await play_sound(la_3_s, n4)
+    await play_sound(fa_4, n4)
+    await play_sound(do_4, n4)
+    await play_sound(fa_4, n4)
+
+    await play_sound(do_4_s, n4)
+    await play_sound(re_4_s, n8)
+    await play_sound(fa_4, n8)
+    await play_sound(re_4_s, n4)
+    await play_sound(so_4, n4)
+
+    await play_sound(la_4_s, n8)
+    await play_sound(fa_4, n8)
+    await play_sound(do_5, n8)
+    await play_sound(do_5_s, n8)
+    await play_sound(do_5, n8)
+    await play_sound(do_5_s, n16)
+    await play_sound(do_5, n16)
+    await play_sound(la_4_s, n8)
+    await play_sound(so_4_s, n8)
+
+    await play_sound(la_4_s, n4 * 4)
 
 
 async def play_random_song():
@@ -880,4 +940,4 @@ async def advanced_test4():
     await going_straight(15, power=50)
 
 
-runloop.run(play_random_song(), advanced_test4())
+runloop.run(play_random_song(), test1())
